@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AbastoSoft - Productos y Cotización</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+    <header>
+        <a href="index.html" class="logo">
+            <img src="img/logo.png" alt="AbastoSoft Logo" class="logo-img">
+            ABASTO SOFT
+        </a>
+        <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menú">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+        <ul class="nav-links" id="nav-links">
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="nosotros.html">Nosotros</a></li>
+            <li><a href="productos.html" class="active">Productos</a></li>
+            <li><a href="modulos.html">Módulos</a></li>
+            <li><a href="metricas.html">Métricas</a></li>
+            <li><a href="contacto.html">Contacto y Ubicación</a></li>
+        </ul>
+        
+        <!-- Botón del Carrito en Header -->
+        <button class="cart-trigger-btn" onclick="toggleCart()" aria-label="Ver Carrito">
+            <i class="fa-solid fa-cart-shopping"></i>
+            <span class="cart-badge" id="cartCount">0</span>
+        </button>
+    </header>
+
+    <main class="features light-section">
+        <div class="section-header">
+            <span>Catálogo Mayorista y Menudeo</span>
+            <h2>Selecciona tus productos y cotiza en tiempo real</h2>
+        </div>
+
+        <div class="features-grid">
+            
+            <!-- Tomate -->
+            <div class="product-card">
+                <img src="img/tomate.jpg" alt="Tomate" class="product-img">
+                <div class="product-info">
+                    <h3>Tomate</h3>
+                    <p>Tomate de primera calidad para mercado e industria.</p>
+                    <div class="product-price-box">
+                        <span class="price-display" id="price-Tomate">$22.00</span>
+                        <select class="unit-select" onchange="updatePrice('Tomate', this)">
+                            <option value="22.00|Caja (50 lb)">Caja (50 lb) - $22.00</option>
+                            <option value="18.00|Ciento">Ciento - $18.00</option>
+                            <option value="0.50|Libra">Libra - $0.50</option>
+                        </select>
+                    </div>
+                    <button class="btn-primary buy-btn" onclick="addToCart('Tomate', event)">
+                        <i class="fa-solid fa-cart-plus"></i> Agregar al Carrito
+                    </button>
+                </div>
+            </div>
+
+            <!-- Cebolla -->
+            <div class="product-card">
+                <img src="img/cebolla.jpg" alt="Cebolla" class="product-img">
+                <div class="product-info">
+                    <h3>Cebolla</h3>
+                    <p>Cebolla blanca de excelente conservación y firmeza.</p>
+                    <div class="product-price-box">
+                        <span class="price-display" id="price-Cebolla">$38.00</span>
+                        <select class="unit-select" onchange="updatePrice('Cebolla', this)">
+                            <option value="38.00|Saco (50 lb)">Saco (50 lb) - $38.00</option>
+                            <option value="70.00|Quintal (100 lb)">Quintal - $70.00</option>
+                            <option value="0.85|Libra">Libra - $0.85</option>
+                        </select>
+                    </div>
+                    <button class="btn-primary buy-btn" onclick="addToCart('Cebolla', event)">
+                        <i class="fa-solid fa-cart-plus"></i> Agregar al Carrito
+                    </button>
+                </div>
+            </div>
+
+            <!-- Zanahoria -->
+            <div class="product-card">
+                <img src="img/zanahoria.jpg" alt="Zanahoria" class="product-img">
+                <div class="product-info">
+                    <h3>Zanahoria</h3>
+                    <p>Zanahoria lavada y seleccionada de grado comercial.</p>
+                    <div class="product-price-box">
+                        <span class="price-display" id="price-Zanahoria">$25.00</span>
+                        <select class="unit-select" onchange="updatePrice('Zanahoria', this)">
+                            <option value="25.00|Saco (50 lb)">Saco (50 lb) - $25.00</option>
+                            <option value="48.00|Quintal (100 lb)">Quintal - $48.00</option>
+                            <option value="0.60|Libra">Libra - $0.60</option>
+                        </select>
+                    </div>
+                    <button class="btn-primary buy-btn" onclick="addToCart('Zanahoria', event)">
+                        <i class="fa-solid fa-cart-plus"></i> Agregar al Carrito
+                    </button>
+                </div>
+            </div>
+
+            <!-- Chile Verde -->
+            <div class="product-card">
+                <img src="img/chile verde.jpg" alt="Chile Verde" class="product-img">
+                <div class="product-info">
+                    <h3>Chile Verde</h3>
+                    <p>Chile dulce fresco ideal para restaurantes y distribuidores.</p>
+                    <div class="product-price-box">
+                        <span class="price-display" id="price-Chile Verde">$16.00</span>
+                        <select class="unit-select" onchange="updatePrice('Chile Verde', this)">
+                            <option value="16.00|Ciento">Ciento - $16.00</option>
+                            <option value="28.00|Caja (40 lb)">Caja (40 lb) - $28.00</option>
+                            <option value="0.75|Libra">Libra - $0.75</option>
+                        </select>
+                    </div>
+                    <button class="btn-primary buy-btn" onclick="addToCart('Chile Verde', event)">
+                        <i class="fa-solid fa-cart-plus"></i> Agregar al Carrito
+                    </button>
+                </div>
+            </div>
+
+            <!-- Repollo -->
+            <div class="product-card">
+                <img src="img/repollo.jpg" alt="Repollo" class="product-img">
+                <div class="product-info">
+                    <h3>Repollo</h3>
+                    <p>Repollo verde compacto de alto rendimiento en peso.</p>
+                    <div class="product-price-box">
+                        <span class="price-display" id="price-Repollo">$45.00</span>
+                        <select class="unit-select" onchange="updatePrice('Repollo', this)">
+                            <option value="45.00|Ciento">Ciento - $45.00</option>
+                            <option value="20.00|Saco (25 uds)">Saco (25 uds) - $20.00</option>
+                            <option value="0.50|Libra">Libra - $0.50</option>
+                        </select>
+                    </div>
+                    <button class="btn-primary buy-btn" onclick="addToCart('Repollo', event)">
+                        <i class="fa-solid fa-cart-plus"></i> Agregar al Carrito
+                    </button>
+                </div>
+            </div>
+
+            <!-- Papaya -->
+            <div class="product-card">
+                <img src="img/papaya.jpg" alt="Papaya" class="product-img">
+                <div class="product-info">
+                    <h3>Papaya</h3>
+                    <p>Papaya dulce en óptimo estado de maduración comercial.</p>
+                    <div class="product-price-box">
+                        <span class="price-display" id="price-Papaya">$35.00</span>
+                        <select class="unit-select" onchange="updatePrice('Papaya', this)">
+                            <option value="35.00|Caja (12 Uds)">Caja (12 Uds) - $35.00</option>
+                            <option value="80.00|Ciento">Ciento - $80.00</option>
+                            <option value="0.65|Libra">Libra - $0.65</option>
+                        </select>
+                    </div>
+                    <button class="btn-primary buy-btn" onclick="addToCart('Papaya', event)">
+                        <i class="fa-solid fa-cart-plus"></i> Agregar al Carrito
+                    </button>
+                </div>
+            </div>
+
+            <!-- NUEVO PRODUCTO 1: Papa Solanum -->
+            <div class="product-card">
+                <img src="img/papas.png" alt="Papa Solanum" class="product-img">
+                <div class="product-info">
+                    <h3>Papa</h3>
+                    <p>Papa seleccionada para consumo general y freído.</p>
+                    <div class="product-price-box">
+                        <span class="price-display" id="price-Papa">$42.00</span>
+                        <select class="unit-select" onchange="updatePrice('Papa', this)">
+                            <option value="42.00|Quintal (100 lb)">Quintal - $42.00</option>
+                            <option value="22.00|Saco (50 lb)">Saco (50 lb) - $22.00</option>
+                            <option value="0.55|Libra">Libra - $0.55</option>
+                        </select>
+                    </div>
+                    <button class="btn-primary buy-btn" onclick="addToCart('Papa', event)">
+                        <i class="fa-solid fa-cart-plus"></i> Agregar al Carrito
+                    </button>
+                </div>
+            </div>
+
+            <!-- NUEVO PRODUCTO 2: Aguacate Hass -->
+            <div class="product-card">
+                <img src="img/aguacate.jpg" alt="Aguacate Hass" class="product-img">
+                <div class="product-info">
+                    <h3>Aguacate</h3>
+                    <p>Calidad de exportación, textura cremosa y calibre óptimo.</p>
+                    <div class="product-price-box">
+                        <span class="price-display" id="price-Aguacate">$32.00</span>
+                        <select class="unit-select" onchange="updatePrice('Aguacate', this)">
+                            <option value="32.00|Caja (30 lb)">Caja (30 lb) - $32.00</option>
+                            <option value="65.00|Ciento">Ciento - $65.00</option>
+                            <option value="1.20|Libra">Libra - $1.20</option>
+                        </select>
+                    </div>
+                    <button class="btn-primary buy-btn" onclick="addToCart('Aguacate', event)">
+                        <i class="fa-solid fa-cart-plus"></i> Agregar al Carrito
+                    </button>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Panel Lateral del Carrito -->
+    <aside id="cartDrawer" class="cart-drawer">
+        <div class="cart-header">
+            <h3><i class="fa-solid fa-cart-shopping"></i> Cotización de Pedido</h3>
+            <span class="close-cart" onclick="toggleCart()">&times;</span>
+        </div>
+        <div class="cart-body" id="cartItems">
+            <p class="empty-msg">El carrito está vacío. Agrega productos para cotizar.</p>
+        </div>
+        <div class="cart-footer">
+            <div class="total-row">
+                <span>Total Estimado:</span>
+                <strong id="cartTotal">$0.00</strong>
+            </div>
+            <button class="btn-primary checkout-btn" onclick="openCheckoutModal()" id="btnCheckout" disabled>
+                Procesar Cotización / Compra
+            </button>
+        </div>
+    </aside>
+
+    <!-- Modal Formulario de Compra -->
+    <div id="orderModal" class="modal">
+        <div class="modal-content modal-large">
+            <span class="close-modal" onclick="closeOrderModal()">&times;</span>
+            <h3><i class="fa-solid fa-file-invoice-dollar"></i> Formulario de Cotización y Pedido</h3>
+            <p class="modal-subtext">Ingresa tus datos para procesar la orden y coordinar la entrega con un asesor.</p>
+            
+            <form onsubmit="submitOrder(event)">
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label>Nombre Completo:</label>
+                        <input type="text" placeholder="Ej. Juan Carlos Pérez" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Correo Electrónico:</label>
+                        <input type="email" placeholder="correo@ejemplo.com" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>DUI:</label>
+                        <input type="text" placeholder="00000000-0" pattern="[0-9]{8}-[0-9]{1}" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Teléfono Celular Principal:</label>
+                        <input type="tel" placeholder="7000-0000" pattern="[0-9]{4}-[0-9]{4}|[0-9]{8}" required>
+                    </div>
+                </div>
+
+                <div class="summary-box">
+                    <h4>Resumen de Cotización</h4>
+                    <ul id="modalSummaryList"></ul>
+                    <div class="summary-total">Total a Cotizar: <span id="modalTotal">$0.00</span></div>
+                </div>
+
+                <button type="submit" class="btn-primary full-width-btn">
+                    Enviar Cotización
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-container">
+            <a href="index.html" class="logo">
+                <img src="img/logo.png" alt="AbastoSoft Logo" class="logo-img">
+                ABASTO SOFT
+            </a>
+            <p>Proveedores mayoristas de productos agrícolas e innovación tecnológica para el comercio de abastos.</p>
+        </div>
+        <div class="footer-copy">
+            &copy; 2026 AbastoSoft. Todos los derechos reservados.
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

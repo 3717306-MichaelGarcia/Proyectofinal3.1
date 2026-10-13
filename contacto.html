@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AbastoSoft - Contacto y Ubicación</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+    <header>
+        <a href="index.html" class="logo">
+            <img src="img/logo.png" alt="AbastoSoft Logo" class="logo-img">
+            ABASTO SOFT
+        </a>
+        <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menú">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+        <ul class="nav-links" id="nav-links">
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="nosotros.html">Nosotros</a></li>
+            <li><a href="productos.html">Productos</a></li>
+            <li><a href="modulos.html">Módulos</a></li>
+            <li><a href="metricas.html">Métricas</a></li>
+            <li><a href="contacto.html" class="active">Contacto y Ubicación</a></li>
+        </ul>
+    </header>
+
+    <section class="features light-section">
+        <div class="section-header">
+            <span>Encuéntranos</span>
+            <h2>Contacto y Ubicación</h2>
+        </div>
+
+        <div class="contact-grid">
+            <div class="contact-info">
+                <h3>Información de Contacto</h3>
+                <p><i class="fa-solid fa-location-dot"></i> Central de Abastos, Bodega 45, Sector Agrícola.</p>
+                <p><i class="fa-solid fa-phone"></i> +503 2200-0000 / +503 7000-0000</p>
+                <p><i class="fa-solid fa-envelope"></i> contacto@abastosoft.com</p>
+                <p><i class="fa-solid fa-clock"></i> Lunes a Sábado: 4:00 AM - 4:00 PM</p>
+                
+                <h3 style="margin-top: 30px;">Envíanos un mensaje</h3>
+                <form class="contact-form" onsubmit="event.preventDefault(); alert('Mensaje enviado con éxito.');">
+                    <input type="text" placeholder="Nombre completo" required>
+                    <input type="email" placeholder="Correo electrónico" required>
+                    <textarea rows="4" placeholder="Escribe tu consulta o pedido..." required></textarea>
+                    <button type="submit" class="btn-primary">Enviar Mensaje</button>
+                </form>
+            </div>
+
+            <div class="map-container">
+                <h3>Nuestra Ubicación</h3>
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15499.508101344445!2d-89.2133!3d13.6989!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTPCsDQxJzU2LjAiTiA4OcKwMTInNDcuOSJX!5e0!3m2!1ses!2ssv!4v1600000000000!5m2!1ses!2ssv" 
+                    width="100%" height="350" style="border:0; border-radius: 12px;" allowfullscreen="" loading="lazy">
+                </iframe>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-container">
+            <a href="index.html" class="logo">
+                <img src="img/logo.png" alt="AbastoSoft Logo" class="logo-img">
+                ABASTO SOFT
+            </a>
+            <p>Proveedores mayoristas de productos agrícolas e innovación tecnológica para el comercio de abastos.</p>
+        </div>
+        <div class="footer-copy">
+            &copy; 2026 AbastoSoft. Todos los derechos reservados.
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
